@@ -9,6 +9,14 @@ public class Ball : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        if (_rigidbody.IsSleeping())
+        {
+            _rigidbody.WakeUp();
+        }
+    }
+
     public void StopBall()
     {
         _rigidbody.isKinematic = true;
